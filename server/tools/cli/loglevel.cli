@@ -7,3 +7,8 @@
 /subsystem=logging/periodic-rotating-file-handler=FILE:remove
 
 /subsystem=logging/console-handler=CONSOLE:undefine-attribute(name=level)
+
+
+/subsystem=logging/json-formatter=json:add(exception-output-type=formatted, pretty-print=false, meta-data={label=value})
+/subsystem=logging/console-handler=CONSOLE:write-attribute(name=named-formatter, value=json)
+
